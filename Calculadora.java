@@ -26,7 +26,7 @@ import java.util.Scanner; // import do scanner
 
                                             
                                         }
-                                    System.out.println("seu numero decimal convertido em binário é igual: " + resultadoBinario);// aqui va1i exibir o resultado para o usuario
+                        System.out.println("seu numero decimal convertido em binário é igual: " + resultadoBinario);// aqui va1i exibir o resultado para o usuario
 
 
                                     
