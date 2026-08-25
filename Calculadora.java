@@ -11,10 +11,10 @@ import java.util.Scanner; // import do scanner
                         System.out.println("3 - Binário -> Decimal");// texto opcao3
                         System.out.println("4 - Hexadecimal -> Decimal");// texto opcao3
 
-                            int opcao1 = 0;// variavel opção 1 sem valor
-
-                            opcao1 = entrada.nextInt(); //le o numero inteiro digitado pelo usuario
-                                if (opcao1 == 1){ // se a opcao 1 é igual a 1
+                            int opcao = 0;// variavel opção 1 sem valor
+                            
+                            opcao = entrada.nextInt(); //le o numero inteiro digitado pelo usuario
+                                if (opcao == 1){ // se a opcao 1 é igual a 1
                                     System.out.println("Digite o número decimal para ser convertido");// texto pedido
                                     int numeroDecimal = entrada.nextInt(); // cria uma variavel de numero decimal e ele vai ser igual ao inteiro digitado
                                     String resultadoBinario = ""; // cria uma variavel de resultado tipo string sem valor ainda
@@ -35,7 +35,40 @@ import java.util.Scanner; // import do scanner
 
 
 
-            
+                                if(opcao == 2){ // se o usuario escolher a opcao 2
+                                    System.out.println("Digite o número decimal para ser convertido"); // pede para ele digitar o valor a ser convertido
+                                    int numeroDecimal = entrada.nextInt(); // a variavel do numero decimal escolhido vai ser igual ao proximo numero inteiro digitado
+                                    String resultadoHexa = ""; // resultado sem valor
+                                        while (numeroDecimal > 0) { // enquanto o numero decimal for maior q zero
+                                            int resto; // variavel resto
+                                            String simbolo = "";// simbolo é para adicionar os valores 10,11,12...15 que sao A B C D E F
+                                            resto = numeroDecimal % 16;// resto vai ser o resto da divisao por 16
+                                              if (resto == 10){ // se o resto for igual a 10 ele vai assumir o simbolo a
+                                                    simbolo = "A";
+                                              }
+                                                else if (resto == 11){ // se for igual a 11 o B
+                                                    simbolo = "B";
+                                                }
+                                                 else if (resto == 12){// 12 igual a C
+                                                    simbolo = "C";
+                                                }
+                                                 else if (resto == 13){//13 igual a D
+                                                    simbolo = "D";
+                                                }
+                                                 else if (resto == 14){// 14 igual a E
+                                                    simbolo = "E";
+                                                }
+                                                 else if (resto == 15){ // 15 igual a F
+                                                    simbolo = "F";
+                                                }
+                                                else{ // se ele nao for igual a esses numeros acima ele vai sair o numero mesmo só que transformado em string
+                                                    simbolo = ""+ resto;
+                                                }
+                                            resultadoHexa = simbolo + resultadoHexa; // resultado vai ser o simbolo hexa q é o resto + o proprio resultado adicionando valores caso precise
+                                            numeroDecimal = numeroDecimal / 16; // vai continuar dividindo por 16 para continuar até o fim da divisao
+                                                                    System.out.println("seu numero decimal convertido em hexacimal é igual: " + resultadoHexa ); // vai printar o resultado
+                                        }
+                                }
         }
 
 
