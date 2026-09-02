@@ -66,12 +66,31 @@ import java.util.Scanner; // import do scanner
                                                 }
                                             resultadoHexa = simbolo + resultadoHexa; // resultado vai ser o simbolo hexa q é o resto + o proprio resultado adicionando valores caso precise
                                             numeroDecimal = numeroDecimal / 16; // vai continuar dividindo por 16 para continuar até o fim da divisao
-                                                                    System.out.println("seu numero decimal convertido em hexacimal é igual: " + resultadoHexa ); // vai printar o resultado
+                                                                    
                                         }
+                                        System.out.println("seu numero decimal convertido em hexacimal é igual: " + resultadoHexa ); // vai printar o resultado
                                 }
-        }
-
-
-        
-    }
     
+
+                                if(opcao == 3){ // se o usuário escolher a opcao 3
+                                    System.out.println("Digite o valor binário a ser convertido: ");
+                                    String numeroBinario = entrada.next();
+                                    int posicao = 0;
+                                    int resultadoDecimal = 0;
+                                    while(posicao < numeroBinario.length()){
+                                        char digito = numeroBinario.charAt(posicao);
+                                        int expoente = numeroBinario.length() - 1 - posicao;
+                                        int potencia = (int) Math.pow(2, expoente);
+
+                                            if(digito == '1'){
+                                                resultadoDecimal = resultadoDecimal + potencia;
+
+                                            }
+                                            
+                                           posicao ++;
+                                    
+                                }
+                                System.out.println("Seu número binário convertido em Decimal é igual: " + resultadoDecimal);
+    }
+}
+}
