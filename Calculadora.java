@@ -92,5 +92,49 @@ import java.util.Scanner; // import do scanner
                                 }
                                 System.out.println("Seu número binário convertido em Decimal é igual: " + resultadoDecimal);
     }
-}
+
+
+                                if(opcao == 4){
+                                    System.out.println("Digite o valor hexadecimal a ser convertido: ");
+                                    String numerohexa = entrada.next();
+                                    int posicao = 0;
+                                    int resultadodecimal = 0;
+                                    while (posicao < numerohexa.length()) { // 
+                                    char digito = numerohexa.charAt(posicao);
+                                    int valorDigito = 0;
+                                        if(digito == 'A'){
+                                            valorDigito = 10;
+                                        }
+                                        else if (digito == 'B'){
+                                            valorDigito = 11;
+                                        }
+                                        else if (digito == 'C'){
+                                            valorDigito = 12 ;
+                                        }
+                                        else if (digito == 'D'){
+                                            valorDigito = 13 ;
+                                        }
+                                        else if (digito == 'E'){
+                                            valorDigito = 14;
+                                        }
+                                        else if (digito == 'F'){
+                                            valorDigito = 15;
+                                        }
+                                        else{
+                                            valorDigito = Character.getNumericValue(digito);
+                                        }
+
+                                        int expoente = numerohexa.length() - 1 - posicao;
+                                        int potencia = (int) Math.pow(16, expoente);
+                                        int valor = valorDigito * potencia;
+                                        resultadodecimal = resultadodecimal + valor;
+                                        posicao ++;
+                                        }
+                                        System.out.println("Seu numero hexademical convertido para decimal é igual a: " + resultadodecimal);
+                                        
+                                    }
+
+                                }
+
+
 }
